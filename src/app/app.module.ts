@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductoDetailComponent } from './producto-detail/producto-detail.component';
 import { ProductoFormComponent } from './producto-form/producto-form.component';
 import { ProductoListComponent } from './producto-list/producto-list.component';
+import { ProductoService } from './service/api/producto.service';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { ProductoListComponent } from './producto-list/producto-list.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ProductoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,8 @@
     import { Inject, Injectable, Optional } from '@angular/core';
     import { Http, Headers, URLSearchParams } from '@angular/http';
-    import { RequestMethod, RequestOptions, RequestOptionsArgs } from '@angular/http/'
-    import { Response, ResponseContentType }  from '@angular/http';
-    import { Observable } from 'rxjs/Observable';
+    import { RequestMethod, RequestOptions, RequestOptionsArgs } from '@angular/http/';
+    import { Response, ResponseContentType } from '@angular/http';
+    import { Observable } from 'rxjs';
     import '../rxjs-operators';
     import { Producto } from '../model/producto';
     import { BASE_PATH, COLLECTION_FORMATS }  from '../variables';
@@ -10,7 +10,7 @@
 
 @Injectable()
 export class ProductoService {
-    protected basePath = 'http://localhost:8080/productostore-back/api';
+    protected basePath = 'http://localhost:8080/hulkstore/api';
     public defaultHeaders: Headers = new Headers();
     public configuration: Configuration = new Configuration();
 

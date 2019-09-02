@@ -6,21 +6,17 @@ import { ProductoService } from '../service/api/producto.service';
 
 @Component({
   selector: 'app-producto-list',
-  templateUrl: './producto-list.component.html',
-  styleUrls: ['./producto-list.component.css']
+  templateUrl: './producto-list.component.html'
 })
 export class ProductoListComponent implements OnInit {
-  private producto: Producto = new Producto();
+  private nbProductos: number;
+  private productos: Producto[];
 
-  constructor(private router: Router, private productoService: ProductoService) { }
-
+  constructor(private productoService: ProductoService) {
+  }
   ngOnInit() {
-  }
-
-  create() {
-    this.productoService.createProducto(this.producto)
-        .finally(() => this.router.navigate(['/producto-list']))
-        .subscribe();
-  }
+    this.productoService.countProductos().subscribe(nbProductos => this.nbProductos = nbProductos);
+    this.productoService.getProductos().subscribe(productos => this.productos = productos);
+}
 
 }

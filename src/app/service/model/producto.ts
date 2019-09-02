@@ -6,7 +6,7 @@ export class Producto {
     
     descripcion?: string;
 
-    costounitario?: number;
+    costo?: number;
 
     codigo: string;
    

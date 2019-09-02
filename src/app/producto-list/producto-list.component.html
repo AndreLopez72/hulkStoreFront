@@ -1,51 +1,9 @@
-<h2>Create a new producto</h2>
-<form (ngSubmit)="create()">
-  <div class="form-group row">
-    <label class="col-2 col-form-label">Nombre</label>
-    <div class="col-10">
-      <input class="form-control" type="text" [(ngModel)]="producto.nombre" name="nombre">
+<ul class="list-unstyled">
+  <li class="media  my-4" *ngFor="let producto of productos">
+    <img class="d-flex mr-3 img-thumbnail" src="{{producto.imageURL}}" alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1"><a [routerLink]="['/producto-detail', producto.id]">{{producto.title}}</a></h5>
+      {{producto.description}}
     </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-2 col-form-label">Descripcón</label>
-    <div class="col-10">
-      <textarea class="form-control" rows="3" [(ngModel)]="producto.descripcion" name="descripcion"></textarea>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-2 col-form-label">Costo</label>
-    <div class="col-10">
-      <div class="input-group">
-        <input class="form-control" type="number" [(ngModel)]="producto.costo" name="costo">
-        <span class="input-group-addon">$</span>
-      </div>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-2 col-form-label">Cantidad</label>
-    <div class="col-10">
-      <input class="form-control" type="number" [(ngModel)]="producto.cantidad" name="cantidad">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-2 col-form-label">Image URL</label>
-    <div class="col-10">
-      <input class="form-control" type="url" [(ngModel)]="producto.imageURL" name="imageURL">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-2 col-form-label">Material</label>
-    <div class="col-10">
-      <select class="form-control" [(ngModel)]="producto.material" name="material">
-        <option value="">Select</option>
-        <option value="0">PLASTICO</option>
-        <option value="1">ACERO</option>
-        <option value="2">ACETATO</option>
-        <option value="3">ALUMINIO</option>
-      </select>
-    </div>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Create</sutton>
-  <a class="btn btn-secondary" [routerLink]="['/producto-list']" role="button">Cancel</a>
-</form>
+  </li>
+</ul>

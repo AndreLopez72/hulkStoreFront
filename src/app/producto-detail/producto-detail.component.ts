@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import 'rxjs/Rx/map';
+
 import { Producto } from '../service/model/producto';
 import { ProductoService } from '../service/api/producto.service';
 
@@ -16,9 +16,9 @@ export class ProductoDetailComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private productoService: ProductoService) { }
 
   ngOnInit() {
-   // this.route.params.map(params => params['productoid'])
-     // .switchMap(id => this.productoService.getProducto(id))
-      //.subscribe(producto => this.producto = producto);
+       this.route.params.map(params => params['productoid'])
+      .switchMap(id => this.productoService.getProducto(id))
+      .subscribe(producto => this.producto = producto);
   }
 
   delete() {

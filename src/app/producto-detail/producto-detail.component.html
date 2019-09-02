@@ -1,22 +1,22 @@
-<h2>Detail of a producto</h2>
+<h2>Detalle del producto</h2>
 <form (ngSubmit)="delete()">
     <div class="form-group row">
         <label class="col-2 col-form-label">Nombre</label>
         <div class="col-10">
-            <input class="form-control" type="text" value="{{producto.title}}" name="title" readonly>
+            <input class="form-control" type="text" value="{{producto.nombre}}" name="nombre" readonly>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-2 col-form-label">Description</label>
         <div class="col-10">
-            <textarea class="form-control" rows="3" name="description" readonly>{{producto.description}}</textarea>
+            <textarea class="form-control" rows="3" name="descripcion" readonly>{{producto.descripcion}}</textarea>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-2 col-form-label">Costo</label>
         <div class="col-10">
             <div class="input-group">
-                <input class="form-control" type="number" value="{{producto.unitCost}}" name="unitCost" readonly>
+                <input class="form-control" type="number" value="{{producto.costo}}" name="costo" readonly>
                 <span class="input-group-addon">$</span>
             </div>
         </div>
@@ -24,22 +24,22 @@
     <div class="form-group row">
         <label class="col-2 col-form-label">Codigo</label>
         <div class="col-10">
-            <input class="form-control" type="text" value="{{producto.isbn}}" name="isbn" readonly>
+            <input class="form-control" type="text" value="{{producto.codigo}}" name="codigo" readonly>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-2 col-form-label">Cantidad</label>
         <div class="col-10">
-            <input class="form-control" type="number" value="{{producto.nbOfPages}}" name="nbOfPages" readonly>
+            <input class="form-control" type="number" value="{{producto.cantidad}}" name="cantidad" readonly>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-2 col-form-label">material</label>
         <div class="col-10">
-            <input class="form-control" type="text" value="{{producto.language}}" name="language" readonly>
+            <input class="form-control" type="text" value="{{producto.material}}" name="material" readonly>
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Delete</button>
+    <button type="submit" class="btn btn-primary">Borrar</button>
     <a class="btn btn-secondary" [routerLink]="['/producto-list']" role="button">Back</a>
 </form>
